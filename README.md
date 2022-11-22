@@ -12,7 +12,9 @@ In Opacus-DPCR, we support multiple DPCR models for building parametric models. 
 
 Our Opacus-DPCR keeps a high compatibility with Opacus. You only need to easily modify a few lines of code for applying our achievements.
 
-For example, in a classic Opacus example from (https://github.com/pytorch/opacus/blob/main/examples/mnist.py), you just do the following modifications to apply Opacus-DPCR. For more details, see our [**Example Code**](https://github.com/imcjp/Opacus-DPCR/blob/main/demo/opacusDpcrTest.py).
+As an instance, for the classic Opacus example from (https://github.com/pytorch/opacus/blob/main/examples/mnist.py), you just do the following modifications to apply Opacus-DPCR as shown in the following Figure. For more details, see our [**Example Code**](https://github.com/imcjp/Opacus-DPCR/blob/main/demo/opacusDpcrTest.py).
+
+![image](https://github.com/imcjp/Opacus-DPCR/blob/main/data/img/guide.png)
 
 [our work] J. Cai, X. Liu, “A Federated Learning Framework Based on Differential Privacy Continuous Data Release.”
 [1] T.-H. H. Chan, E. Shi, and D. Song, “Private and continual release of statistics,” ACM Transactions on Information and System Security (TISSEC), vol. 14, no. 3, pp. 1–24, 2011.
