@@ -2,6 +2,8 @@
 
 Opacus-DPCR is a library extend the widely used [**Opacus**](https://github.com/pytorch/opacus) for learning with **differential privacy** (DP). Compared with Opacus, our Opacus-DPCR introduces differential privacy continuous data release (DPCR) to improve learning accuracy. It integrates various DPCR models (including our proposed BCRG and ABCRG). For more details, please refer to our work **"A Federated Learning Framework Based on Differential Privacy Continuous Data Release"**.
 
+You can install Opacus-DPCR by
+
 In Opacus-DPCR, we support multiple DPCR models for building parametric models. They are as follows:
 1. **SimpleMech**: Essentially the same as Opacus. They both add noise after each gradient calculation and then accumulate the noisy gradients to construct the parametric models.
 2. **TwoLevel**: The method proposed in [1]. It is a primary DPCR model.
