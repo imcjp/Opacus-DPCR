@@ -4,6 +4,9 @@ Opacus-DPCR is a library extend the widely used [**Opacus**](https://github.com/
 
 You can install Opacus-DPCR by
 
+In the **demo** folder, we provide two sample codes for testing DPCR ([**dpcrTest.py**](https://github.com/imcjp/Opacus-DPCR/blob/main/demo/dpcrTest.py)) and privacy learning with DPCR ([**opacusDpcrTest.py**](https://github.com/imcjp/Opacus-DPCR/blob/main/demo/opacusDpcrTest.py)).
+
+
 In Opacus-DPCR, we support multiple DPCR models for building parametric models. They are as follows:
 1. **SimpleMech**: Essentially the same as Opacus. They both add noise after each gradient calculation and then accumulate the noisy gradients to construct the parametric models.
 2. **TwoLevel**: The method proposed in [1]. It is a primary DPCR model.
