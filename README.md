@@ -17,5 +17,7 @@ As an instance, for the classic Opacus example from (https://github.com/pytorch/
 ![image](https://github.com/imcjp/Opacus-DPCR/blob/main/data/img/guide.png)
 
 [our work] J. Cai, X. Liu, “A Federated Learning Framework Based on Differential Privacy Continuous Data Release.”
+
 [1] T.-H. H. Chan, E. Shi, and D. Song, “Private and continual release of statistics,” ACM Transactions on Information and System Security (TISSEC), vol. 14, no. 3, pp. 1–24, 2011.
+
 [2] J. Cai, W. U. Yingjie, and X. Wang, “Method based on matrix mechanism for differential privacy continual data release,” Journal of Frontiers of Computer Science and Technology, 2016.
