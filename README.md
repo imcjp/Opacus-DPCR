@@ -3,6 +3,8 @@
 Opacus-DPCR is a library extend the widely used [**Opacus**](https://github.com/pytorch/opacus) for learning with **differential privacy** (DP). Compared with Opacus, our Opacus-DPCR introduces differential privacy continuous data release (DPCR) to improve learning accuracy. It integrates various DPCR models (including our proposed BCRG and ABCRG). For more details, please refer to our work **"A Federated Learning Framework Based on Differential Privacy Continuous Data Release"**[1].
 
 You can install Opacus-DPCR by
+* pip install **dpcrpy**
+* pip install **opacus_dpcr**
 
 In the **demo** folder, we provide two sample codes for testing DPCR ([**dpcrTest.py**](https://github.com/imcjp/Opacus-DPCR/blob/main/demo/dpcrTest.py)) and privacy learning with DPCR ([**opacusDpcrTest.py**](https://github.com/imcjp/Opacus-DPCR/blob/main/demo/opacusDpcrTest.py)).
 
