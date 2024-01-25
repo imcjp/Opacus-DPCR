@@ -49,6 +49,7 @@ class DPCROptimizer(Optimizer):
             dpcr.initRelease(param)
             self.dpcrs.append(dpcr)
             self._shareId += 1;
+        self.momentum_buffer_list=[None for i in range(len(self.optimizer.params))]
 
     def pre_step(self, closure: Optional[Callable[[], float]] = None) -> Optional[float]:
         """
@@ -77,20 +78,31 @@ class DPCROptimizer(Optimizer):
         self.optimizer._is_last_step_skipped = False
         return True
 
-    def step(self, incMode=False, closure: Optional[Callable[[], float]] = None) -> Optional[float]:
+    def step(self, closure: Optional[Callable[[], float]] = None) -> Optional[float]:
         if closure is not None:
             with torch.enable_grad():
                 closure()
         if self.pre_step():
             lr = self.optimizer.state_dict()['param_groups'][0]['lr']
+            momentum=self.optimizer.state_dict()['param_groups'][0]['momentum']
             with torch.no_grad():
                 self._shareId = 0;
-                for param in self.optimizer.params:
+                for i,param in enumerate(self.optimizer.params):
                     dtParam, noiX, mse = self.dpcrs[self._shareId].dpRelease(param.grad * (-lr))
-                    if incMode:
-                        param.add_(noiX)
-                    else:
-                        param.set_(dtParam + 0)
+
+                    if momentum != 0:
+                        buf = self.momentum_buffer_list[i]
+                        if buf is None:
+                            buf = torch.clone(noiX).detach()
+                            self.momentum_buffer_list[i] = buf
+                        else:
+                            buf.mul_(momentum).add_(noiX, alpha=1)
+                        noiX=buf
+
+                    # if incMode:
+                    param.add_(noiX)
+                    # else:
+                    #     param.set_(dtParam + 0)
                     self._shareId += 1;
         return self.optimizer.params;
 

@@ -51,9 +51,9 @@ class DPCREngine(PrivacyEngine):
             clipping: str = "flat",
             noise_generator=None,
     ) -> Tuple[GradSampleModule, DPOptimizer, DataLoader]:
-        if optimizer.state_dict()['param_groups'][0]['momentum'] > 0:
-            mom = optimizer.state_dict()['param_groups'][0]['momentum'];
-            raise RuntimeError(f"momentum = {mom} > 0. The gradient descent with momentum does not support currently.")
+        # if optimizer.state_dict()['param_groups'][0]['momentum'] > 0:
+        #     mom = optimizer.state_dict()['param_groups'][0]['momentum'];
+        #     raise RuntimeError(f"momentum = {mom} > 0. The gradient descent with momentum does not support currently.")
         module, optimizer, data_loader = PrivacyEngine.make_private(self, module=module, optimizer=optimizer,
                                                                     data_loader=data_loader,
                                                                     noise_multiplier=noise_multiplier,
