@@ -223,13 +223,12 @@ def main(dpcr_model='NoDPCR',sigma=1.5):
         logger.setLevel(level=logging.DEBUG)
 
     # Sets `world_size = 1` if you run on a single GPU with `args.local_rank = -1`
-    if args.local_rank != -1 or args.device != "cpu":
-        rank, local_rank, world_size = setup(args)
-        device = local_rank
-    else:
+    if torch.cuda.is_available():
         device = "cuda:0"
-        rank = 0
-        world_size = 1
+    else:
+        device = "cpu"
+    rank = 0
+    world_size = 1
 
     if args.secure_rng:
         try:
