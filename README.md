@@ -6,6 +6,8 @@ You can install Opacus-DPCR by
 * pip install **dpcrpy**
 * pip install **opacus_dpcr**
 
+**Note: This project is designed based on Opacus version 1.1.2. Due to significant interface differences between versions of opacus, if you have installed a different version of Opacus, please reinstall Opacus version 1.1.2. Thank you!**
+
 In the **demo** folder, we provide two sample codes for testing DPCR ([**dpcrTest.py**](https://github.com/imcjp/Opacus-DPCR/blob/main/demo/dpcrTest.py)) and privacy learning with DPCR ([**opacusDpcrTest.py**](https://github.com/imcjp/Opacus-DPCR/blob/main/demo/opacusDpcrTest.py)).
 
 
